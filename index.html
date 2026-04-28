@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jack Cui | Developer</title>
+  <meta
+    name="description"
+    content="Personal developer card for Jack Cui, a web developer building practical software with modern frontend and backend tools."
+  />
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --ink: #172033;
+      --muted: #5c667a;
+      --panel: #ffffff;
+      --line: #dfe4ee;
+      --brand: #176b87;
+      --brand-dark: #0d4458;
+      --accent: #c26841;
+      --soft: #e9f5f7;
+      --shadow: 0 24px 70px rgba(23, 32, 51, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(23, 107, 135, 0.16), transparent 32rem),
+        linear-gradient(135deg, #f6f7fb 0%, #eef3f5 48%, #f9f3ee 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0 38px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .avatar {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      color: white;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      box-shadow: 0 10px 24px rgba(23, 107, 135, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--ink);
+      font-weight: 700;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(23, 107, 135, 0.45);
+      background: #ffffff;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .intro,
+    .panel {
+      border: 1px solid rgba(223, 228, 238, 0.9);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .intro {
+      padding: clamp(28px, 5vw, 56px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: var(--brand-dark);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #2ba866;
+      box-shadow: 0 0 0 5px rgba(43, 168, 102, 0.14);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.5rem, 7vw, 5.7rem);
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button.primary {
+      color: white;
+      border-color: var(--brand);
+      background: var(--brand);
+    }
+
+    .button.primary:hover {
+      border-color: var(--brand-dark);
+      background: var(--brand-dark);
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+      padding: 28px;
+    }
+
+    .profile-card img {
+      width: 112px;
+      height: 112px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 36px rgba(23, 32, 51, 0.15);
+    }
+
+    .profile-card h2 {
+      margin: 22px 0 8px;
+      font-size: 1.8rem;
+      letter-spacing: 0;
+    }
+
+    .profile-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .meta-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .meta-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .meta-item strong {
+      color: var(--ink);
+    }
+
+    section {
+      margin-top: 34px;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      font-size: 1.1rem;
+      color: var(--brand-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .tile {
+      min-height: 176px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .tile h3 {
+      margin: 0 0 12px;
+      font-size: 1.12rem;
+    }
+
+    .tile p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .chip {
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--soft);
+      color: var(--brand-dark);
+      font-weight: 800;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 42px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    @media (max-width: 840px) {
+      .nav,
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Jack Cui home">
+        <span class="avatar">JC</span>
+        <span>Jack Cui</span>
+      </a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="mailto:haorancui2001@gmail.com">Email</a>
+        <a href="https://github.com/haorancui01">GitHub</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <div class="hero">
+        <article class="intro">
+          <p class="eyebrow"><span class="status-dot"></span> Available for thoughtful software projects</p>
+          <h1>Developer building clean, useful digital products.</h1>
+          <p class="lead">
+            I'm Jack Cui, a developer focused on practical web experiences, reliable backend foundations,
+            and the small details that make software feel clear, fast, and easy to use.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="mailto:haorancui2001@gmail.com">Contact Me</a>
+            <a class="button" href="https://github.com/haorancui01">View GitHub</a>
+          </div>
+        </article>
+
+        <aside class="panel profile-card" aria-label="Profile card">
+          <div>
+            <img src="https://avatars.githubusercontent.com/u/29300914?v=4" alt="Jack Cui GitHub avatar" />
+            <h2>Jack Cui</h2>
+            <p>Web developer exploring full-stack product development and modern application design.</p>
+          </div>
+          <div class="meta-list">
+            <div class="meta-item"><span>GitHub</span><strong>@haorancui01</strong></div>
+            <div class="meta-item"><span>Focus</span><strong>Web Apps</strong></div>
+            <div class="meta-item"><span>Email</span><strong>haorancui2001@gmail.com</strong></div>
+          </div>
+        </aside>
+      </div>
+
+      <section id="work" aria-labelledby="work-title">
+        <h2 class="section-title" id="work-title">What I Build</h2>
+        <div class="grid">
+          <article class="tile">
+            <h3>Frontend Interfaces</h3>
+            <p>Responsive screens, reusable components, and clear user flows for web applications.</p>
+          </article>
+          <article class="tile">
+            <h3>Backend APIs</h3>
+            <p>RESTful services, database models, and data flows that keep products organized.</p>
+          </article>
+          <article class="tile">
+            <h3>Product Thinking</h3>
+            <p>Simple project structures and practical features shaped around real user needs.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="stack" aria-labelledby="stack-title">
+        <h2 class="section-title" id="stack-title">Tech Stack</h2>
+        <div class="stack">
+          <span class="chip">JavaScript</span>
+          <span class="chip">React</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Express</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">GitHub</span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Designed and built by Jack Cui.</span>
+      <span>&copy; 2026</span>
+    </footer>
+  </div>
+</body>
+</html>
