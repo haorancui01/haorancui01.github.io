@@ -6,5 +6,5 @@ Visit: https://haorancui01.github.io/
 
 ## About
 
-A small personal introduction page for Jack Cui, focused on web development,
-full-stack projects, and practical software products.
+A small personal introduction page for Jack Cui, focused on DevOps, Agent AI,
+automation, and practical software products.
